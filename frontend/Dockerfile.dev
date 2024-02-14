@@ -1,0 +1,13 @@
+# This Docker file is used when we run our app in the Development environment
+
+
+FROM node:16-alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "start"]
